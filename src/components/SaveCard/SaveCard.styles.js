@@ -3,21 +3,23 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
 
     container: {
+        backgroundColor: "steelblue",
         margin: 15,
     },
 
     input_container: {
         backgroundColor: "mintcream",
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+        margin: 10,
+        marginTop: 5,
+        borderRadius:10,
     },
 
     button_container: {
         backgroundColor: "grey",
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
+        borderRadius: 10,
         alignItems: "center",
-        height: 25
+        margin:10,
+        padding:10,
 
     },
 

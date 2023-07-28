@@ -12,8 +12,6 @@ function App() {
 
   const [list, setList] = useState([])
 
-  const [counter, setCounter] = useState(0)
-
   function addChores() {
 
     setList([
@@ -22,8 +20,6 @@ function App() {
         name: chore
       }
     ]);
-
-    setCounter(list.length + 1)
   }
 
   function removeChores(index) {
@@ -31,7 +27,6 @@ function App() {
     const newList = [...list];
     newList.splice(index, 1);
     setList(newList);
-    setCounter(list.length - 1)
 
   }
 
@@ -40,7 +35,7 @@ function App() {
   return (
     <View style={styles.container}>
       <View>
-        <Header title={"Yapılacaklar"} counter={counter} />
+        <Header title={"Yapılacaklar"} counter={list.length} />
       </View>
 
       <View style={{ flex: 1 }}>
@@ -48,15 +43,14 @@ function App() {
           data={list}
           renderItem={renderItems}
         />
-      </View>
 
-      <View style={styles.function_container}>
         <SaveCard
           value={chore}
           changeText={changeItem}
           press={addChores} />
 
       </View>
+
     </View>
   )
 }
@@ -65,13 +59,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "steelblue",
-
   },
-
-  function_container: {
-    flex: 0.2,
-    justifyContent: "flex-end"
-  }
 
 })
 
